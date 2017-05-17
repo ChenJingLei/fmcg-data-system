@@ -7,5 +7,7 @@ import us.codecraft.webmagic.Spider;
  */
 public interface iPageCrawler {
 
-    void execute(Spider spider, String goodName, int threadNum) throws Exception;
+    void executeByGoodName(Spider spider, String goodName) throws Exception;
+
+    void executeByURL(Spider spider, String url) throws Exception;
 }

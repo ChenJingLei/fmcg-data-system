@@ -16,8 +16,8 @@ import us.codecraft.webmagic.Spider;
  * Created by cjl20 on 2017/5/14.
  */
 @Component
-@RabbitListener(queues = "task-node")
-public class Receiver {
+@RabbitListener(queues = "name-node")
+public class NameReceiver {
 
     @Autowired
     private SpiderService spiderService;
@@ -27,7 +27,7 @@ public class Receiver {
 
         Spider spider = spiderService.getSpider(CrawlerDriver.ClassForName(task.getPlatform()), task.getGoodName());
         iPageCrawler pageCrawler = CrawlerDriver.driverForClass(CrawlerDriver.ClassForName(task.getPlatform()));
-        pageCrawler.execute(spider, task.getGoodName().replaceAll(" ", "%20"), 5);
+        pageCrawler.executeByGoodName(spider, task.getGoodName().replaceAll(" ", "%20"));
 
     }
 }

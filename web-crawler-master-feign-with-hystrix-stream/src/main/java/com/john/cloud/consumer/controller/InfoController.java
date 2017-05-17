@@ -1,9 +1,8 @@
 package com.john.cloud.consumer.controller;
 
-import com.john.cloud.consumer.client.CrawlerExecuteFeignClient;
+import com.john.cloud.consumer.feign.CrawlerExecuteFeignClient;
 import com.john.crawler.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,13 +23,14 @@ public class InfoController {
     @Autowired
     private CrawlerExecuteFeignClient crawlerExecuteFeignClient;
 
+
     @RequestMapping("/test")
     public String test() {
         Task task = new Task();
         task.setPlatform("JD");
         task.setGoodName("啤酒");
-        crawlerExecuteFeignClient.execute(task);
-        return "1";
+        return crawlerExecuteFeignClient.executeByGoodName(task);
+
     }
 
     @GetMapping("/instance-info")

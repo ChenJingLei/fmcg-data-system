@@ -29,19 +29,20 @@ public class JDRepoPageCrawler implements iPageCrawler, PageProcessor {
     /*
      * https://so.m.jd.com/ware/searchList.action?_format_=json&stock=0&sort=1&page=1&keyword=商品名称
      */
-    public void execute(Spider spider, String goodName, int threadNum) throws Exception {
-        spider
-                .addUrl(
-                        SEARCH_LIST_URL
-                                .replace("\\", "")
-                                .replace("d+", "1")
-                                .replace(".*", goodName)
-                )
-                .thread(threadNum)
-                .addPipeline(new ConsolePipeline());
+    public void executeByGoodName(Spider spider, String goodName) throws Exception {
+        this.executeByURL(
+                spider,
+                SEARCH_LIST_URL
+                        .replace("\\", "")
+                        .replace("d+", "1")
+                        .replace(".*", goodName));
+    }
 
+    public void executeByURL(Spider spider, String url) throws Exception {
+        spider.addUrl(url);
         spider.start();
     }
+
 
     //每一页-》先拿商品信息
     //再拿每一个商品具体信息

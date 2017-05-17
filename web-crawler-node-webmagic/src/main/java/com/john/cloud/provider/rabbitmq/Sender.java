@@ -14,9 +14,14 @@ public class Sender {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send(Task task) {
+    public void sendByName(Task task) {
         System.out.println("Sender object: " + task.toString());
         this.rabbitTemplate.convertAndSend("task-node", task);
+    }
+
+    public void sendByURL(Task task) {
+        System.out.println("Sender object: " + task.toString());
+        this.rabbitTemplate.convertAndSend("url-node", task);
     }
 
 

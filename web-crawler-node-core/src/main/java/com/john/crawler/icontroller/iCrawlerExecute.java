@@ -8,6 +8,11 @@ import com.john.crawler.model.Task;
  */
 public interface iCrawlerExecute {
 
-    String execute(Task task);
+    /*
+    * 用于master与node之间通讯
+    */
+    String executeByGoodName(Task task);
+
+
 
 }

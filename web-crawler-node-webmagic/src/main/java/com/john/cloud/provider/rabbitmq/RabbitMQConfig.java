@@ -11,7 +11,12 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     @Bean
-    public Queue taskQueue() {
-        return new Queue("task-node");
+    public Queue NameQueue() {
+        return new Queue("name-node");
+    }
+
+    @Bean
+    public Queue URLQueue() {
+        return new Queue("url-node");
     }
 }

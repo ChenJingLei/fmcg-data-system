@@ -4,11 +4,13 @@ import com.john.cloud.provider.crawlermonitor.SpringMonitorSpiderListener;
 import com.john.cloud.provider.crawlermonitor.SpringSpiderStatus;
 import com.john.cloud.provider.crawlermonitor.SpringSpiderStatusMXBean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.SpiderListener;
 
+import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import javax.annotation.PostConstruct;
@@ -24,6 +26,9 @@ public class SpiderService {
 
     private List<SpringSpiderStatusMXBean> spiderStatuses = new ArrayList();
 
+    @Value("${spider.threadNum}")
+    private int threadNum = 5;
+
     @PostConstruct
     public void init() {
         //读取所有PageProcess信息
@@ -33,7 +38,7 @@ public class SpiderService {
         Spider spider = null;
         try {
             PageProcessor p = (PageProcessor) clazz.newInstance();
-            spider = Spider.create(p);
+            spider = Spider.create(p).thread(threadNum).addPipeline(new ConsolePipeline());
             SpringMonitorSpiderListener monitorSpiderListener = new SpringMonitorSpiderListener();
             if (spider.getSpiderListeners() == null) {
                 List<SpiderListener> spiderListeners = new ArrayList();

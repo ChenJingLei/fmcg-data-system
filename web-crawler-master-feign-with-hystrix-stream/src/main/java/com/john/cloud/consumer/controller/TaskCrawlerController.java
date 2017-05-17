@@ -1,6 +1,6 @@
 package com.john.cloud.consumer.controller;
 
-import com.john.cloud.consumer.client.CrawlerExecuteFeignClient;
+import com.john.cloud.consumer.feign.CrawlerExecuteFeignClient;
 import com.john.cloud.consumer.model.Capture;
 
 import com.john.cloud.consumer.model.TaskCollection;
@@ -29,7 +29,7 @@ public class TaskCrawlerController {
                 Task task = new Task();
                 task.setPlatform(capture.getPlatform());
                 task.setGoodName(goodName);
-                crawlerExecuteFeignClient.execute(task);
+                crawlerExecuteFeignClient.executeByGoodName(task);
             }
         }
     }
