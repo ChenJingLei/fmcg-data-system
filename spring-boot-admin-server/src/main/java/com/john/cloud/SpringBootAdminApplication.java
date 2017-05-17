@@ -1,4 +1,4 @@
-package com.john;
+package com.john.cloud;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import de.codecentric.boot.admin.notify.LoggingNotifier;
