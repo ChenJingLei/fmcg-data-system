@@ -4,10 +4,7 @@ import com.john.cloud.provider.rabbitmq.Sender;
 import com.john.crawler.icontroller.iCrawlerNodeExecute;
 import com.john.crawler.model.Task;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by cjl20 on 2017/5/14.
@@ -41,5 +38,4 @@ public class CrawlerExecuteController implements iCrawlerNodeExecute {
         }
         return "Success";
     }
-
 }

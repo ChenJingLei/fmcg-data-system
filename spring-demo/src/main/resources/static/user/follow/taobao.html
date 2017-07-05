@@ -1,0 +1,89 @@
+<div>
+    <div class="page-header">
+
+        <h4>关注宝贝
+            <small style="font-weight: bold">淘宝</small>
+        </h4>
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-address-modal-sm">
+            商品地址关注
+        </button>
+
+        <div class="modal fade bs-address-modal-sm" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h8 class="modal-title">商品地址关注</h8>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form" id="address-form" name="address-form" novalidate>
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">商品地址</label>
+                                <div class="col-sm-8">
+                                    <input type="url" class="form-control" placeholder="https://..."
+                                           ng-pattern="/^https+://[a-zA-Z.]+.jd.com/.*$/"
+                                           aria-describedby="basic-address" ng-model="address" required>
+                                </div>
+                            </div>
+                            <span>{{error}}</span>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" id="address-import"
+                                        ng-click="getGoodsByAddress(address,'JD')">导入
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="well">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-" type="button">搜索</button>
+              </span>
+        </div>
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>商品编号</th>
+                <th>商品标题</th>
+                <th>商品价格</th>
+                <th>商品品类</th>
+                <th>商品品牌</th>
+                <th>评价数</th>
+                <th>30天销量</th>
+                <th>库存</th>
+                <th>抓取时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="good in goods | filter:query ">
+                <td>{{good.id}}</td>
+                <td width="20%">{{good.title}}</td>
+                <td>￥{{good.price}}</td>
+                <td>{{good.type}}</td>
+                <td>{{good.brand}}</td>
+                <td>{{good.totalCount}}</td>
+                <td>{{good.monthSales}}</td>
+                <td>{{good.restCount}}</td>
+                <td>{{getLocalTime(good.time)}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&laquo;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+</div>

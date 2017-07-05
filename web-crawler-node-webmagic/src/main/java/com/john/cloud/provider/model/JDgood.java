@@ -1,21 +1,35 @@
 package com.john.cloud.provider.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by cjl20 on 2017/5/15.
  */
+
+@Entity
+@Table(name = "jdgood")
 public class JDgood implements Serializable {
 
-    private String wareId;
-    private String wname;
-    private String totalCount;
-    private String catid;
-    private String cid1;
-    private String cid2;
-    private String good;
-    private String imageurl;
-    private String jdPrice;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String wareId = "";
+    private String wname = "";
+    private String totalCount = "";
+    private String catid = "";
+    private String cid1 = "";
+    private String cid2 = "";
+    private String good = "";
+    private String imageurl = "";
+    private String jdPrice = "";
+    private String goodUrl = "";
+    private String type = "";
+    private String brand = "";
+    private int salesRate = 0;
+    private Date date = new Date();
 
     public JDgood() {
     }
@@ -92,6 +106,54 @@ public class JDgood implements Serializable {
         this.jdPrice = jdPrice;
     }
 
+    public String getGoodUrl() {
+        return goodUrl;
+    }
+
+    public void setGoodUrl(String goodUrl) {
+        this.goodUrl = goodUrl;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getSalesRate() {
+        return salesRate;
+    }
+
+    public void setSalesRate(int salesRate) {
+        this.salesRate = salesRate;
+    }
+
     @Override
     public String toString() {
         return "JDgood{" +
@@ -104,6 +166,9 @@ public class JDgood implements Serializable {
                 ", good='" + good + '\'' +
                 ", imageurl='" + imageurl + '\'' +
                 ", jdPrice='" + jdPrice + '\'' +
+                ", goodUrl='" + goodUrl + '\'' +
+                ", type='" + type + '\'' +
+                ", brand='" + brand + '\'' +
                 '}';
     }
 }

@@ -6,28 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="fmcg-system-web" />
+        <module name="microservice-account-server" />
         <module name="microservice-config-server-eureka" />
         <module name="microservice-discovery-eureka" />
         <module name="microservice-hystrix-dashboard" />
         <module name="microservice-hystrix-turbine" />
         <module name="spring-boot-admin-server" />
+        <module name="spring-demo" />
         <module name="test" />
         <module name="web-crawler-master-feign-with-hystrix-stream" />
         <module name="web-crawler-node-core" />
         <module name="web-crawler-node-webmagic" />
+        <module name="web-crawler-schedule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fmcg-data-system" target="1.8" />
+      <module name="fmcg-system-web" target="1.8" />
+      <module name="microservice-account-server" target="1.8" />
       <module name="microservice-config-server-eureka" target="1.8" />
       <module name="microservice-discovery-eureka" target="1.8" />
       <module name="microservice-hystrix-dashboard" target="1.8" />
       <module name="microservice-hystrix-turbine" target="1.8" />
       <module name="spring-boot-admin-server" target="1.8" />
+      <module name="spring-demo" target="1.8" />
       <module name="test" target="1.8" />
       <module name="web-crawler-master-feign-with-hystrix-stream" target="1.8" />
       <module name="web-crawler-node-core" target="1.5" />
       <module name="web-crawler-node-webmagic" target="1.8" />
+      <module name="web-crawler-schedule" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

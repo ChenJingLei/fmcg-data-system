@@ -1,0 +1,33 @@
+.navbar {
+    margin-bottom: 0px;
+}
+
+.content {
+    width: 260px;
+    margin: 50px 10px;
+}
+
+.filterinput {
+    background-color: rgba(249, 244, 244, 0);
+    border-radius: 15px;
+    width: 90%;
+    height: 30px;
+    border: thin solid #FFF;
+    text-indent: 0.5em;
+    font-weight: bold;
+    color: #FFF;
+}
+
+#menu-list a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.jquery-accordion-menu {
+    -moz-border-radius: 8px; /*8px是圆角的角度，值越大则圆角效果越明显，如果修改此项，请修改以下两项的值，使之相同*/
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}

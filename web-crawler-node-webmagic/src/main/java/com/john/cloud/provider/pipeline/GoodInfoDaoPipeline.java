@@ -13,7 +13,8 @@ import us.codecraft.webmagic.pipeline.PageModelPipeline;
 @Component("GoodInfoDaoPipeline")
 public class GoodInfoDaoPipeline implements PageModelPipeline<JDgood> {
 
-
+    @Autowired
+    private GoodRepository goodRepository;
 
     @Override
     public void process(JDgood jDgood, Task task) {

@@ -3,15 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fmcg-data-system.iml" filepath="$PROJECT_DIR$/fmcg-data-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fmcg-system-web/fmcg-system-web.iml" filepath="$PROJECT_DIR$/fmcg-system-web/fmcg-system-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice-account-server/microservice-account-server.iml" filepath="$PROJECT_DIR$/microservice-account-server/microservice-account-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-config-server-eureka/microservice-config-server-eureka.iml" filepath="$PROJECT_DIR$/microservice-config-server-eureka/microservice-config-server-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-discovery-eureka/microservice-discovery-eureka.iml" filepath="$PROJECT_DIR$/microservice-discovery-eureka/microservice-discovery-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-hystrix-dashboard/microservice-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/microservice-hystrix-dashboard/microservice-hystrix-dashboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/microservice-hystrix-turbine/microservice-hystrix-turbine.iml" filepath="$PROJECT_DIR$/microservice-hystrix-turbine/microservice-hystrix-turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-admin-server/spring-boot-admin-server.iml" filepath="$PROJECT_DIR$/spring-boot-admin-server/spring-boot-admin-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-demo/spring-demo.iml" filepath="$PROJECT_DIR$/spring-demo/spring-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-crawler-master-feign-with-hystrix-stream/web-crawler-master-feign-with-hystrix-stream.iml" filepath="$PROJECT_DIR$/web-crawler-master-feign-with-hystrix-stream/web-crawler-master-feign-with-hystrix-stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-crawler-node-core/web-crawler-node-core.iml" filepath="$PROJECT_DIR$/web-crawler-node-core/web-crawler-node-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/web-crawler-node-webmagic/web-crawler-node-webmagic.iml" filepath="$PROJECT_DIR$/web-crawler-node-webmagic/web-crawler-node-webmagic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-crawler-schedule/web-crawler-schedule.iml" filepath="$PROJECT_DIR$/web-crawler-schedule/web-crawler-schedule.iml" />
     </modules>
   </component>
 </project>

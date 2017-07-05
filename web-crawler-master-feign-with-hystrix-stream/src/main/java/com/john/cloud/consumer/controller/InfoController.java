@@ -23,14 +23,12 @@ public class InfoController {
     @Autowired
     private CrawlerExecuteFeignClient crawlerExecuteFeignClient;
 
-
     @RequestMapping("/test")
     public String test() {
         Task task = new Task();
         task.setPlatform("JD");
         task.setGoodName("啤酒");
         return crawlerExecuteFeignClient.executeByGoodName(task);
-
     }
 
     @GetMapping("/instance-info")

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>Flat UI Free</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Loading Flat UI -->
+    <link rel="stylesheet" href="/bower_components/flat-ui/dist/css/flat-ui.min.css">
+
+    <link rel="stylesheet" href="/bower_components/jquery-accordion-menu/css/jquery-accordion-menu.css">
+
+    <link rel="stylesheet" href="/css/menu.css">
+
+    <script src="/bower_components/flat-ui/dist/js/vendor/html5shiv.js"></script>
+    <script src="/bower_components/flat-ui/dist/js/vendor/respond.min.js"></script>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-5">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="#">快消品分析系统</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-5">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/user/main">首页</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" sec:authorize="isAuthenticated()">
+                    <span sec:authentication="name"></span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span class="visible-sm visible-xs">Settings<span class="fui-gear"></span></span><span
+                    class="visible-md visible-lg"><span class="fui-gear"></span></span></a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="row">
+    <div class="col-sm-6 col-md-3">
+        <div id="jquery-accordion-menu" class="jquery-accordion-menu red">
+            <div class="jquery-accordion-menu-header" id="form"></div>
+            <ul id="menu-list">
+                <li><a href="#">快消品数据关注</a>
+                    <ul class="submenu">
+                        <li><a href="/user/main#!/follow/taobao">淘宝</a></li>
+                        <li><a href="/user/main#!/follow/tmall">天猫</a></li>
+                        <li><a href="/user/main#!/follow/jd">京东</a></li>
+                        <!--<li><a href="/user/main#!/follow/1store">1号店</a></li>-->
+                        <!--<li><a href="/user/main#!/follow/suning">苏宁易购</a></li>-->
+                        <!--<li><a href="/user/main#!/follow/womai">中粮我买网</a></li>-->
+                        <!--<li><a href="/user/main#!/follow/chblt">便利通商城</a></li>-->
+                        <!--<li><a href="/user/main#!/follow/amazon">亚马逊</a></li>-->
+                    </ul>
+                </li>
+
+                <li><a href="#">数据获取设置</a>
+                    <ul class="submenu">
+                        <li><a href="/schedule">数据定时获取</a></li>
+                        <li><a href="/esset">电商设置</a></li>
+                        <li><a href="/resource">数据资源调配</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">关键字查询</a>
+                    <ul class="submenu">
+                        <li><a href="/user/main#!/keyword/jd">京东</a></li>
+                    </ul>
+                </li>
+                <!--<li><a href="#">功能2</a></li>-->
+                <!--<li><a href="#">功能3</a></li>-->
+                <!--<li><a href="#">功能4</a></li>-->
+                <!--<li><a href="#">功能5</a></li>-->
+                <!--<li><a href="#">功能6</a></li>-->
+                <!--<li><a href="#">功能7</a></li>-->
+                <!--<li><a href="#">功能8</a></li>-->
+                <!--<li><a href="#">功能9</a></li>-->
+                <!--<li><a href="#">功能10</a></li>-->
+            </ul>
+            <div class="jquery-accordion-menu-footer">
+                菜单
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-9" ng-app='FMCGSystemApp'>
+
+        <div ng-view style="padding: 15px"></div>
+
+    </div><!-- /.col-md-8 -->
+
+</div><!-- /.row -->
+
+<script src="/bower_components/flat-ui/dist/js/vendor/jquery.min.js"></script>
+<script src="/bower_components/flat-ui/dist/js/flat-ui.min.js"></script>
+<script src="/bower_components/jquery-accordion-menu/js/jquery-accordion-menu.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-route/angular-route.min.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="/js/asset/application.js"></script>
+<script src="/js/app/controllers.js"></script>
+<script src="/js/app/services.js"></script>
+<script src="/js/app/app.js"></script>
+
+</body>
+</html>

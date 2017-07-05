@@ -21,6 +21,9 @@
         <module>web-crawler-master-feign-with-hystrix-stream</module>
         <module>web-crawler-node-webmagic</module>
         <module>test</module>
+        <module>web-crawler-schedule</module>
+        <module>fmcg-system-web</module>
+        <module>microservice-account-server</module>
     </modules>
 
     <parent>
@@ -39,6 +42,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.3.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>

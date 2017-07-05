@@ -1,0 +1,70 @@
+<script src="/bower_components/angular-powerbi/dist/angular-powerbi.js"></script>
+<script src="/bower_components/powerbi-client/dist/powerbi.min.js"></script>
+
+<div id="reportContainer" style="height: 669.585px;">
+    <iframe style="width:100%;height:100%;"
+            src="https://embedded.powerbi.com/appTokenReportEmbed?reportId=c699f2ab-5ee1-41ee-903d-de1c5ca646e2"
+            scrolling="no" allowfullscreen="true"></iframe>
+</div>
+
+<script type="application/javascript">
+    // Read embed application token from textbox
+    var txtAccessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXIiOiIwLjIuMCIsIndjbiI6IlBvd2VyQmlBenVyZVNhbXBsZXMiLCJ3aWQiOiJmODFjMTk2Ni1lZGVlLTQxMWItOGY4YS1mODQ0NjAxOWIwNDQiLCJyaWQiOiJjNTJhZjhhYi0wNDY4LTQxNjUtOTJhZi1kYzM5ODU4ZDY2YWQiLCJpc3MiOiJQb3dlckJJU0RLIiwiYXVkIjoiaHR0cHM6Ly9hbmFseXNpcy53aW5kb3dzLm5ldC9wb3dlcmJpL2FwaSIsImV4cCI6MTg5MzQ0ODgwMCwibmJmIjoxNDgxMDM3MTY5fQ.m4SwqmRWA9rJgfl72lEQ_G-Ijpw9Up5YwmBOfXi00YU';
+
+    // Read embed URL from textbox
+    var txtEmbedUrl = 'https://embedded.powerbi.com/appTokenReportEmbed?reportId=c52af8ab-0468-4165-92af-dc39858d66ad';
+
+    // Read report Id from textbox
+    var txtEmbedReportId = 'c52af8ab-0468-4165-92af-dc39858d66ad';
+
+    // Get models. models contains enums that can be used.
+    var models = window['powerbi-client'].models;
+
+    // We give All permissions to demonstrate switching between View and Edit mode and saving report.
+    var permissions = models.Permissions.All;
+
+    // Embed configuration used to describe the what and how to embed.
+    // This object is used when calling powerbi.embed.
+    // This also includes settings and options such as filters.
+    // You can find more information at https://github.com/Microsoft/PowerBI-JavaScript/wiki/Embed-Configuration-Details.
+    var config = {
+        type: 'report',
+        accessToken: txtAccessToken,
+        embedUrl: txtEmbedUrl,
+        id: txtEmbedReportId,
+        permissions: permissions,
+        settings: {
+            filterPaneEnabled: true,
+            navContentPaneEnabled: true
+        }
+    };
+
+    // Get a reference to the embedded report HTML element
+    var reportContainer = $('#reportContainer')[0];
+
+    // Embed the report and display it within the div container.
+    var report = powerbi.embed(reportContainer, config);
+
+    // Report.off removes a given event handler if it exists.
+    report.off("loaded");
+
+    // Report.on will add an event handler which prints to Log window.
+    report.on("loaded", function () {
+//        alert("Loaded");
+    });
+
+    report.on("error", function (event) {
+        alert(event.detail);
+
+        report.off("error");
+    });
+
+    report.off("saved");
+    report.on("saved", function (event) {
+        alert(event.detail);
+        if (event.detail.saveAs) {
+            Log.logText('In order to interact with the new report, create a new token and load the new report');
+        }
+    });
+
+</script>

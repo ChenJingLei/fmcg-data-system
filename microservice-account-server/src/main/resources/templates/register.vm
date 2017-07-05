@@ -1,0 +1,7 @@
+<html>
+<body>
+<h3>你好，${name}:</h3>
+
+<h4> 您的注册码是 ${code}!</h4>
+</body>
+</html>

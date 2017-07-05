@@ -16,7 +16,7 @@ public class Sender {
 
     public void sendByName(Task task) {
         System.out.println("Sender object: " + task.toString());
-        this.rabbitTemplate.convertAndSend("task-node", task);
+        this.rabbitTemplate.convertAndSend("name-node", task);
     }
 
     public void sendByURL(Task task) {

@@ -87,7 +87,7 @@ public class SpringSpiderStatus implements SpringSpiderStatusMXBean {
     public int getPagePerSecond() {
         if (getStartTime() != null) {
             int runSeconds = (int) (System.currentTimeMillis() - this.getStartTime().getTime()) / 1000;
-            return this.getSuccessPageCount() / runSeconds;
+            return this.getSuccessPageCount() / runSeconds + 1;
         }
         return -1;
     }

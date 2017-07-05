@@ -11,6 +11,7 @@ import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.SpiderListener;
 
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
+import us.codecraft.webmagic.pipeline.FilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import javax.annotation.PostConstruct;
@@ -34,10 +35,9 @@ public class SpiderService {
         //读取所有PageProcess信息
     }
 
-    public Spider getSpider(Class<?> clazz, String goodName) {
+    public Spider getSpider(PageProcessor p, String goodName) {
         Spider spider = null;
         try {
-            PageProcessor p = (PageProcessor) clazz.newInstance();
             spider = Spider.create(p).thread(threadNum).addPipeline(new ConsolePipeline());
             SpringMonitorSpiderListener monitorSpiderListener = new SpringMonitorSpiderListener();
             if (spider.getSpiderListeners() == null) {

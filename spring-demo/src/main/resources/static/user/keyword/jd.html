@@ -1,0 +1,54 @@
+<div>
+    <div class="page-header">
+
+        <h4>关键字查询
+            <small style="font-weight: bold">京东</small>
+        </h4>
+    </div>
+
+    <div class="well">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-" type="button">搜索</button>
+              </span>
+        </div>
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>商品编号</th>
+                <th>商品照片</th>
+                <th>商品标题</th>
+                <th>JD商品价格</th>
+                <th>好评度</th>
+                <th>商品品牌</th>
+                <th>评价数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="good in goods | filter:query ">
+                <td>{{good.id}}</td>
+                <td width="20%">{{good.wname}}</td>
+                <td>￥{{good.price}}</td>
+                <td>{{good.type}}</td>
+                <td>{{good.brand}}</td>
+                <td>{{good.allCnt}}</td>
+                <td>{{good.sales}}</td>
+                <td>
+                    <button ng-click="deleteGoodByUidAndGid(1,good.id)" class="btn btn-default btn-xs">移除</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&laquo;</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
